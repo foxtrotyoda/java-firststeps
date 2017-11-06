@@ -6,14 +6,8 @@ public class HelloWorld
 {
     public static void main(String[] args)
     {
-        try {
-
-            System.out.println("\n");
-            System.out.println("Hello World!");
-            System.out.println("\n");
-
-        } catch (IOException e)  {
-            e.printStackTrace();
-        }
+        System.out.println("\n");
+        System.out.println("Hello World!");
+        System.out.println("\n");
     }
 }
