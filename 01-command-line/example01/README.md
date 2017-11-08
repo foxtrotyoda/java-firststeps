@@ -39,8 +39,8 @@ Result looks similar to this:
 
 ```bash
 
-
-Hello World!
-
++-----------------+
+|  Hello World!   |
++-----------------+
 
 ```
