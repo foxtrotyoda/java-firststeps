@@ -1,6 +1,8 @@
 # Example #1
 ---
 
+## Java is installed...
+
 Validate that you have `java` and `javac` (compiler) installed by running:
 
 ```bash
@@ -16,4 +18,14 @@ sudo apt-get install maven
 ```
 
 then repeat the tests above
+
+## Compile the class
+
+Compile single class using `javac` 
+
+```bash
+javac HelloWorld.class
+```
+
+
 
