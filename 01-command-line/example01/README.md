@@ -30,3 +30,6 @@ Result looks similar to this:
 +-----------------+
 
 ```
+
+## Wrapping execution as bash commmand
+
