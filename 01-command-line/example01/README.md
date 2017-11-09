@@ -29,7 +29,7 @@ Compile single class using `javac`
 ```bash
 javac HelloWorld.java
 ```
-This would result in generating `HelloWorld.java`.
+This would result in generating `HelloWorld.class`.
 
 ## Run the class
 
