@@ -27,7 +27,7 @@ you should see something like...
 Compile single class using `javac` 
 
 ```bash
-javac HelloWorld.class
+javac HelloWorld.java
 ```
 This would result in generating `HelloWorld.java`.
 
