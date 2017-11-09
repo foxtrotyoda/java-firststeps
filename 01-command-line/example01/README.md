@@ -1,4 +1,4 @@
-# Example #1
+# Example #1 - Single class to .java file
 ---
 
 ## Prerequisites
@@ -33,3 +33,28 @@ Result looks similar to this:
 
 ## Wrapping execution as bash commmand
 
+Have a look inside the `helloworld.sh` bash script file. It invokes `java` and passes all parameters from command-line to the class.
+Because the class is able to recognise the parameters and display them we can call it like that:
+
+```bash
+./helloworld.sh --param1=value1 --use-flag
+```
+
+which is equivalent of a raw call:
+
+```bash
+java HelloWorld --param1=value1 --use-flag
+```
+
+and should display:
+
+```bash
++-----------------+
+|  Hello World!   |
++-----------------+
+
+
+Passed 2 command-line arguments: 
+1) --param1=value1
+2) --use-flag
+```
