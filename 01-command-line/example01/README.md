@@ -1,9 +1,26 @@
 # Example #1 - Single class to .java file
 ---
 
+[« home](../../README.md)
+
 ## Prerequisites
 
-Check if `Java` is installed [click here](../JAVA.md).
+Check if `Java` is installed [click here](../../JAVA.md).
+
+## Command-line path
+
+From project root change directory as follows:
+
+```bash
+cd 01-command-line/example01/
+pwd
+```
+
+you should see something like... 
+
+```bash
+../java-firststeps/01-command-line/example01
+```
 
 ## Compile the class
 

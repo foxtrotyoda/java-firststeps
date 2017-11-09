@@ -1,6 +1,8 @@
 # Java installation
 ---
 
+[« back to list](README.md)
+
 Validate that you have `java` and `javac` (compiler) installed by running:
 
 ```bash
