@@ -21,12 +21,12 @@
         <executions>
           <execution>
             <goals>
-              <goal>jarpack</goal>
+              <goal>jar</goal>
             </goals>
           </execution>
         </executions>
         <configuration>
-          <outputDirectory>jars/</outputDirectory>
+          <outputDirectory>target-jars/</outputDirectory>
           <archive>
             <manifest>
               <addClasspath>true</addClasspath>
