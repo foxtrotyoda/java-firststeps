@@ -6,6 +6,21 @@ RED="\e[31m"
 BOLD="\e[1m"
 INVERT="\e[7m"
 PROJECTNAME=`cat pom.xml | grep "finalName" | sed -e 's/>/ /g' | sed -e 's/</ /g' | sed -e 's/\// /g' | sed -e 's/finalName/ /g' | sed -e 's/^[ \t]*//'`
+
+regenerate_dir () {
+    if [[ ! -e $1 ]]; then
+        mkdir $1
+    elif [[ ! -d $dir ]]; then
+        EXIST=1
+    fi
+    touch $1/README.md
+    echo "# $2" >> $1/README.md
+    echo "---"      >> $1/README.md
+    echo ""         >> $1/README.md
+}
+
+
+
 echo "+-------------------------------------------+"
 echo -e "| ${INVERT}${BOLD} Purge ${RESET} and ${INVERT}${BOLD} build ${RESET} commandline w. ${BOLD}maven${RESET}  |"
 echo "+-------------------------------------------+"
@@ -22,30 +37,21 @@ chmod 777 bin/
 echo -e "3. Building... ${BOLD}${YELLOW}mvn clean package${RESET}"
 mvn clean package > target/build.log
 echo -e "4. Adding... ${BOLD}${YELLOW}README.md${RESET} files."
-touch target/README.md
-echo "# Target" >> target/README.md
-echo "---"      >> target/README.md
-echo ""         >> target/README.md
-echo -e "   ${YELLOW}target/${RESET} ${BOLD}${GREEN}Done!${RESET}"
-touch bin/README.md
-echo "# bin" >> bin/README.md
-echo "---"      >> bin/README.md
-echo ""         >> bin/README.md
-echo -e "   ${YELLOW}bin/${RESET} ${BOLD}${GREEN}Done!${RESET}"
+regenerate_dir "target/" "Target"
+regenerate_dir "bin/" "bin"
 echo ""
-
-if [ "$?" -eq "0" ]
+ARTEFACTS=`ls target/*.jar 2>/dev/null | sed 's/\r/ /g' | sed 's/\n/ /g'`
+if [ "$ARTEFACTS" == "" ]
 then
+    echo -e "   ${BOLD}${RED}Error!${RESET} Please check ${BOLD}${YELLOW}target/build.log${RESET}"
+    echo "--- Done ---"
+    echo ""
+    exit 1
+else
     echo -e "   ${BOLD}${GREEN}OK!${RESET}"
-    ARTEFACTS=`ls -lah target/*.jar | sed 's/\n/ /g'`
     echo "   Artifacts produced: "
     echo -e "${BOLD}${YELLOW}${ARTEFACTS}${RESET}"
     echo "--- Done ---"
     echo ""
     exit 0
-else
-    echo -e "   ${BOLD}${RED}Error!${RESET} Please check ${BOLD}${YELLOW}target/build.log${RESET}"
-    echo "--- Done ---"
-    echo ""
-    exit 1
 fi
