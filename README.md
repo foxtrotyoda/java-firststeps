@@ -10,4 +10,4 @@ See [here](JAVA.md) to make sure you have `java` JDK installed.
 
 * Example #1 - [Single class to **.java** file (with bash wrapper script)](01-command-line/example01/README.md)
 * Example #2 - [Own package compiled into a **.jar** file (with bash wrapper script)](01-command-line/example02/README.md)
-* Example #3 - [Own package compiled into a **.jar** with **ant**](01-command-line/example03/README.md)
+* Example #3 - [Own package compiled into a **.jar** with **maven**](01-command-line/example03/README.md)
